@@ -144,6 +144,7 @@ export class VegaLite extends React.PureComponent<VegaLiteProps, VegaLiteState> 
       this.view = new vega.View(runtime)
         .logLevel(vega.Warn)
         .initialize(this.refs[CHART_REF] as any)
+        .actions(true)
         .renderer(this.props.renderer || 'canvas')
         .hover();
       vegaTooltip.vega(this.view);
